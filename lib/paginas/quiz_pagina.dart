@@ -20,7 +20,10 @@ class QuizPaginaState extends State<QuizPagina> {
   Quiz quiz = new Quiz([
     new Questao("Han Solo é o pai de Luke", false),
     new Questao("Homem-Aranha é da DC", false),
-    new Questao("Wolverine possui o fator de cura", true)
+    new Questao("Wolverine possui o fator de cura", true),
+    new Questao("Thanos é apaixonado pela Morte", true),
+    new Questao ("Karen Page foi assassinada pelo Justiceiro", false),
+    new Questao ("Kyle Rayner é um dos Lanternas Verdes", true)
   ]);
   String questaoTexto;
   int questaoNumber;

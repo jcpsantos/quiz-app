@@ -47,7 +47,7 @@ class QuestaoTextoState extends State<QuestaoTexto> with SingleTickerProviderSta
       child: new Padding(
         padding: new EdgeInsets.symmetric(vertical: 20.0),
         child: new Center(
-          child: new Text("Instrução " + widget._questaoNumber.toString() + ": " + widget._questao,
+          child: new Text("Pergunta " + widget._questaoNumber.toString() + ": " + widget._questao,
             style: new TextStyle(fontSize: _fontSizeAnimation.value * 15),
           ),
         )
