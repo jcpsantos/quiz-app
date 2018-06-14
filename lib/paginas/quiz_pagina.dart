@@ -5,7 +5,7 @@ import '../modelos/quiz.dart';
 
 import '../design/button_resposta.dart';
 import '../design/questao_texto.dart';
-import '../desing/correto_errado.dart';
+import '../design/correto_errado.dart';
 
 import './score_pagina.dart';
 
@@ -36,8 +36,8 @@ class QuizPaginaState extends State<QuizPagina> {
   }
 
   void handleAnswer(bool answer) {
-    isCorreto = (questaoAtual.answer == answer);
-    quiz.answer(isCorreto);
+    isCorreto = (questaoAtual.resposta == answer);
+    quiz.resposta(isCorreto);
     this.setState(() {
       overlayShouldBeVisible = true;
     });
@@ -58,14 +58,14 @@ class QuizPaginaState extends State<QuizPagina> {
         overlayShouldBeVisible == true ? new CorretoErrado(
           isCorreto,
           () {
-            if (quiz.length == questaoNumber) {
-              Navigator.of(context).pushAndRemoveUntil(new MaterialPageRoute(builder: (BuildContext context) => new ScorePagina(quiz.score, quiz.length)), (Route route) => route == null);
+            if (quiz.quant == questaoNumber) {
+              Navigator.of(context).pushAndRemoveUntil(new MaterialPageRoute(builder: (BuildContext context) => new ScorePagina(quiz.score, quiz.quant)), (Route route) => route == null);
               return;
             }
-            questaoAtual = quiz.proximaQuestion;
+            questaoAtual = quiz.proximaQuestao;
             this.setState(() {
               overlayShouldBeVisible = false;
-              questaoTexto = questaoAtual.question;
+              questaoTexto = questaoAtual.questao;
               questaoNumber = quiz.questaoNumber;
             });
           }
