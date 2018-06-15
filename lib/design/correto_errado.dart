@@ -54,7 +54,7 @@ class CorretoErradoState extends State<CorretoErrado> with SingleTickerProviderS
             new Padding(
               padding: new EdgeInsets.only(bottom: 20.0),
             ),
-            new Text(widget._isCorreto == true ? "Correro! Parabéns" : "Errado! Que Pena", style: new TextStyle(color: Colors.white, fontSize: 25.0),)
+            new Text(widget._isCorreto == true ? "Correto! Parabéns" : "Errado! Que Pena", style: new TextStyle(color: Colors.white, fontSize: 25.0),)
           ],
         ),
       ),
